@@ -18,7 +18,7 @@ private:
     void delete_helper(Node* cur);
     void insert_helper(Node*& cur, std::string key, int value);
     void print_helper(Node* cur);
-    bool is_identical(Node* cur1, Node* cur2);
+   
 
 public:
     Dictionary();
@@ -26,9 +26,11 @@ public:
     ~Dictionary();
     Dictionary& operator=(const Dictionary& right);
 
+    static bool is_identical(Node* cur1, Node* cur2);
+
     friend bool operator==(const Dictionary& left, const Dictionary& right);
     friend bool operator!=(const Dictionary& left, const Dictionary& right);
-
+   
     void print();
     /*
     Печатаем в виде
@@ -36,13 +38,15 @@ public:
      ("conscientiousness" : 27),
      ("crankshaft" : 364)
      */
-
+    
     void insert(std::string key, int value);
     void find(Node*& cur, std::string key, Node*& parent);
     Node* find(std::string key);    //Находит элемент по его ключу
     //Поддерживаем уникальность! Если такой ключ есть - просто перезаписать значение
     void erase(std::string key);
 };
+
+
 
 Dictionary::Dictionary() {
     root = nullptr;
@@ -112,7 +116,7 @@ void Dictionary::print_helper(Node* cur) {
 }
  
 bool operator==(const Dictionary& left, const Dictionary& right) {
-    return is_identical(left.root, right.root);
+    return Dictionary::is_identical(left.root, right.root);
 }
 
 bool Dictionary::is_identical(Node* cur1, Node* cur2) {
