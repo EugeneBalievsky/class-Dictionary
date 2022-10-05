@@ -110,7 +110,7 @@ void Dictionary::print_helper(Node* cur) {
     std::cout <<"(\"" << cur->key << '"'<< " : " << cur->value << ')';
     print_helper(cur->right);
 }
-
+ 
 bool operator==(const Dictionary& left, const Dictionary& right) {
     return is_identical(left.root, right.root);
 }
@@ -120,7 +120,7 @@ bool Dictionary::is_identical(Node* cur1, Node* cur2) {
         && is_identical(cur1->left, cur2->left)
         && is_identical(cur1->right, cur2->right) : !cur1 && !cur2;
 }
- 
+
 bool operator!=(const Dictionary& left, const Dictionary& right) {
     return !(left == right);
 }
@@ -185,9 +185,9 @@ void Dictionary::erase(std::string key) {
             while (min->left) {
                 min = min->left;
             }
-            int minval = min->value;
+            std::string minval = min->key;
             erase(minval);
-            cur->value = minval;
+            cur->key = minval; 
         }
         //Если удаляемый узел имеет одного потомка
         else {
@@ -206,20 +206,24 @@ void Dictionary::erase(std::string key) {
             }
             delete cur;
         }
-    }
-
 }
 
 int main() {
     
     Dictionary tree;
-    tree.insert("ghkahg", 10);
-    tree.insert("ksjhksh", 67);
-    tree.insert("ghkahg", 35);
+    tree.insert("hippo", 10);
+    tree.insert("monkey", 67);
+    tree.insert("deer", 35);
     tree.insert("zebra", 45);
     tree.insert("abra", 345);
 
     
+    tree.print();
+    tree.erase("zebra");
+    tree.print();
+    tree.erase("hippo");
+    tree.print();
+    tree.erase("abra");
     tree.print();
   
     return 0;

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32901.82
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "class Dictionary", "class Dictionary\class Dictionary.vcxproj", "{DFC262E5-5F30-43AD-8567-1F66E0AF27CA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "class Dictionary", "class Dictionary.vcxproj", "{DFC262E5-5F30-43AD-8567-1F66E0AF27CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7E953F61-8665-443C-90DF-DFE03FAC7C59}
+		SolutionGuid = {D85D7FBE-96E8-4940-A733-39A750E3A78B}
 	EndGlobalSection
 EndGlobal
